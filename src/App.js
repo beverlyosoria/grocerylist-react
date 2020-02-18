@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
 	state = {
-		todos: [ 'First Item', 'second item' ],
+		todos: [ 'First Item', 'Second item' ],
 		inputValue: ''
 	};
 	//the only thing this should handle is the todo to state
