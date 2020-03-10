@@ -48,28 +48,36 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<div>
-					Add an Item...
+				<h1>GROCERY LIST</h1>
+				<div className="container">
+					<div>
+						Add an Item...
+						<br />
+					</div>
+					<input
+						type="text"
+						placeholder="Type item here..."
+						value={this.state.newItem}
+						onChange={(e) => this.updateInput('newItem', e.target.value)}
+					/>
+					<button className="add-btn" onClick={() => this.addItem()}>
+						Add
+					</button>
 					<br />
+
+					<ul>
+						{this.state.list.map((item) => {
+							return (
+								<li key={item.id}>
+									{item.value}
+									<button className="delete-btn" onClick={() => this.deleteItem(item.id)}>
+										X
+									</button>
+								</li>
+							);
+						})}
+					</ul>
 				</div>
-				<input
-					type="text"
-					placeholder="Type item here..."
-					value={this.state.newItem}
-					onChange={(e) => this.updateInput('newItem', e.target.value)}
-				/>
-				<button onClick={() => this.addItem()}>Add</button>
-				<br />
-				<ul>
-					{this.state.list.map((item) => {
-						return (
-							<li key={item.id}>
-								{item.value}
-								<button onClick={() => this.deleteItem(item.id)}>X</button>
-							</li>
-						);
-					})}
-				</ul>
 			</div>
 		);
 	}
