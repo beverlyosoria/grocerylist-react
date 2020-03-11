@@ -49,7 +49,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<h1>GROCERY LIST</h1>
-				<div className="container">
+				<div className="container" style={{ justifyContent: 'center' }}>
 					<div>
 						Add an Item...
 						<br />
